@@ -48,7 +48,7 @@ const experience = [
   },
   {
     title: "Freelance UI/UX Designer",
-    period: "2023 - Sekarang",
+    period: "2024 - Sekarang",
     desc: "Merancang antarmuka intuitif dengan Figma dan usability testing.",
   },
 ];
@@ -63,7 +63,10 @@ const education = [
 ];
 
 const About = () => {
-  const [refTools, inViewTools] = useInView({ threshold: 0.2, triggerOnce: false });
+  const [refTools, inViewTools] = useInView({
+    threshold: 0.2,
+    triggerOnce: false,
+  });
 
   return (
     <section
@@ -82,8 +85,8 @@ const About = () => {
             About Me
           </motion.h2>
           <p className="text-gray-400 text-base mt-3 max-w-xl mx-auto">
-            Mahasiswa TI yang berfokus pada teknologi web, antarmuka
-            interaktif, dan pengembangan aplikasi modern.
+            Mahasiswa TI yang berfokus pada teknologi web, antarmuka interaktif,
+            dan pengembangan aplikasi modern.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mt-6">
             {[
@@ -173,9 +176,7 @@ const About = () => {
                           {skill.icon}
                         </div>
                         <div>
-                          <p className="text-white font-medium">
-                            {skill.name}
-                          </p>
+                          <p className="text-white font-medium">{skill.name}</p>
                           <p className="text-gray-400 text-xs">
                             {skill.description}
                           </p>
