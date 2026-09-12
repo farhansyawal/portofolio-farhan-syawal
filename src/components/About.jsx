@@ -1,44 +1,43 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import { FaCode, FaPalette, FaServer, FaLaptopCode } from "react-icons/fa";
+
+const TIERS = ["Dasar", "Berkembang", "Cakap", "Mahir", "Ahli"];
 
 const skills = [
   {
     name: "HTML/CSS",
-    level: 70,
+    tier: 4,
     icon: <FaCode />,
     description: "Fondasi utama untuk membangun tampilan halaman web.",
   },
   {
     name: "JavaScript",
-    level: 85,
+    tier: 2,
     icon: <FaLaptopCode />,
     description:
       "Digunakan untuk membuat website menjadi interaktif dan dinamis.",
   },
   {
     name: "React & Tailwind",
-    level: 90,
+    tier: 2,
     icon: <FaLaptopCode />,
     description:
       "Membangun antarmuka modern dengan komponen dan styling cepat.",
   },
   {
     name: "PHP & Laravel",
-    level: 75,
+    tier: 4,
     icon: <FaServer />,
     description: "Untuk pengembangan backend dan RESTful API modern.",
   },
   {
     name: "UI/UX Design",
-    level: 80,
+    tier: 4,
     icon: <FaPalette />,
     description: "Merancang tampilan dan pengalaman pengguna yang menarik.",
   },
 ];
-
-const tools = ["VS Code", "Figma", "GitHub", "Postman", "MySQL", "Trello"];
 
 const experience = [
   {
@@ -47,10 +46,11 @@ const experience = [
     desc: "Membangun aplikasi web responsif dengan HTML, Bootstrap, dan PHP.",
   },
   {
-    title: "Freelance UI/UX Designer",
-    period: "2024 - Sekarang",
-    desc: "Merancang antarmuka intuitif dengan Figma dan usability testing.",
+    title: "Backend Developer Intern - Kementrian Lingkungan Hidup",
+    period: "Oktober 2025 - Januari 2026",
+    desc: "Membangun aplikasi web layanan pegawai dengan Laravel, Tailwind CSS, dan.",
   },
+  
 ];
 
 const education = [
@@ -63,11 +63,6 @@ const education = [
 ];
 
 const About = () => {
-  const [refTools, inViewTools] = useInView({
-    threshold: 0.2,
-    triggerOnce: false,
-  });
-
   return (
     <section
       id="about"
@@ -85,8 +80,10 @@ const About = () => {
             About Me
           </motion.h2>
           <p className="text-gray-400 text-base mt-3 max-w-xl mx-auto">
-            Mahasiswa TI yang berfokus pada teknologi web, antarmuka interaktif,
-            dan pengembangan aplikasi modern.
+            Fresh Graduate Universitas Bina Sarana Informatika, berpengalaman sebagai Backend Developer Intern di Kementerian Lingkungan
+Hidup / Badan Pengendalian Lingkungan Hidup. Berfokus pada pengembangan aplikasi berbasis web yang responsif dan terintegrasi
+menggunakan Laravel dan Tailwind CSS. Memiliki kemampuan analisis logika backend yang solid serta terbiasa membangun sistem
+digital yang efisien dan nyaman digunakan. Siap berkontribusi dalam mendukung kebutuhan pengembangan web perusahaan.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mt-6">
             {[
@@ -170,61 +167,45 @@ const About = () => {
                     transition={{ delay: idx * 0.1 }}
                     className="group p-4 bg-white/5 rounded-lg shadow-lg hover:bg-white/10 transition-all duration-300"
                   >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="text-teal-400 text-xl">
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-3 min-w-0">
+                        <div className="text-teal-400 text-xl shrink-0">
                           {skill.icon}
                         </div>
-                        <div>
+                        <div className="min-w-0">
                           <p className="text-white font-medium">{skill.name}</p>
-                          <p className="text-gray-400 text-xs">
+                          <p className="text-gray-400 text-xs truncate">
                             {skill.description}
                           </p>
                         </div>
                       </div>
-                      <span className="text-sm text-teal-300">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="w-full bg-gray-700 rounded-full h-2 mt-3 overflow-hidden">
-                      <motion.div
-                        className="h-2 bg-teal-400 rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: false }}
-                        transition={{ duration: 1 }}
-                      />
+
+                      <div className="shrink-0 text-right">
+                        <span className="text-[11px] font-semibold text-teal-300 uppercase tracking-wide">
+                          {TIERS[skill.tier - 1]}
+                        </span>
+                        <div className="flex items-center gap-1.5 mt-1.5">
+                          {TIERS.map((_, dotIdx) => (
+                            <motion.span
+                              key={dotIdx}
+                              initial={{ scale: 0 }}
+                              whileInView={{ scale: 1 }}
+                              viewport={{ once: false }}
+                              transition={{
+                                delay: idx * 0.1 + dotIdx * 0.05,
+                                duration: 0.25,
+                              }}
+                              className={`w-2 h-2 rounded-full ${
+                                dotIdx < skill.tier
+                                  ? "bg-teal-400"
+                                  : "bg-gray-700"
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </motion.div>
-                ))}
-              </div>
-            </div>
-
-            {/* Tools */}
-            <div ref={refTools}>
-              <h3 className="text-xl text-teal-400 font-semibold mb-4">
-                Tools
-              </h3>
-              <div className="flex flex-wrap gap-3 justify-start">
-                {tools.map((tool, idx) => (
-                  <motion.span
-                    key={idx}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={inViewTools ? { opacity: 1, y: 0 } : {}}
-                    transition={{
-                      delay: idx * 0.1,
-                      duration: 0.4,
-                      ease: "easeOut",
-                    }}
-                    whileHover={{
-                      scale: 1.15,
-                      rotate: [0, 2, -2, 0],
-                      transition: { duration: 0.3 },
-                    }}
-                    className="px-4 py-1 text-sm border border-teal-500 rounded-full text-teal-300 bg-white/5 shadow-md cursor-default transition-all"
-                  >
-                    {tool}
-                  </motion.span>
                 ))}
               </div>
             </div>

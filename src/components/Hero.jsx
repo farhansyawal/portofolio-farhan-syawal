@@ -14,7 +14,6 @@ import { SiTailwindcss } from "react-icons/si";
 const techStack = [
   { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
   { name: "CSS3", icon: <FaCss3Alt className="text-blue-500" /> },
-  { name: "JavaScript", icon: <FaJsSquare className="text-yellow-400" /> },
   { name: "Tailwind CSS", icon: <SiTailwindcss className="text-teal-400" /> },
   { name: "React", icon: <FaReact className="text-cyan-400" /> },
   { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
@@ -33,7 +32,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center md:text-left px-4 sm:px-6 md:px-0"
+            className="text-center md:text-left px-4 sm:px-6 md:px-0 overflow-hidden w-full"
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-4">
               Halo, saya <span className="text-teal-400">Farhan Syawaludin</span>
@@ -57,34 +56,29 @@ const Hero = () => {
               </a>
             </div>
 
-            {/* Tech Stack */}
-            <div className="mt-6">
+            {/* Tech Stack - Animasi Berjalan (Infinite Marquee) */}
+            <div className="mt-8 relative w-full overflow-hidden 
+              before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-12 before:bg-gradient-to-r before:from-[#0f172a] before:to-transparent 
+              after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-12 after:bg-gradient-to-l after:from-[#1e293b] after:to-transparent">
+              
               <motion.div
-                className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4"
-                initial="hidden"
-                animate="visible"
-                variants={{
-                  visible: {
-                    transition: {
-                      staggerChildren: 0.1,
-                    },
-                  },
+                className="flex w-max gap-4 py-2"
+                animate={{ x: ["0%", "-50%"] }}
+                transition={{
+                  ease: "linear",
+                  duration: 20, // Semakin besar angka, semakin lambat bergeraknya
+                  repeat: Infinity,
                 }}
               >
-                {techStack.map((tech, index) => (
-                  <motion.div
+                {/* Datanya di-map dua kali agar sambungannya terlihat mulus (tidak putus) */}
+                {[...techStack, ...techStack].map((tech, index) => (
+                  <div
                     key={index}
-                    className="flex flex-col items-center justify-center p-3 bg-white/10 rounded-lg hover:bg-white/20 transition duration-300 backdrop-blur-sm cursor-pointer shadow hover:shadow-md"
-                    whileHover={{ scale: 1.1, rotate: 3 }}
-                    whileTap={{ scale: 0.95 }}
-                    variants={{
-                      hidden: { opacity: 0, y: 20 },
-                      visible: { opacity: 1, y: 0 },
-                    }}
+                    className="flex items-center gap-3 px-5 py-3 bg-white/10 rounded-lg backdrop-blur-sm border border-white/5 whitespace-nowrap hover:bg-white/20 transition-colors"
                   >
-                    <div className="text-3xl">{tech.icon}</div>
-                    <p className="text-sm mt-1 text-gray-200 text-center">{tech.name}</p>
-                  </motion.div>
+                    <div className="text-2xl">{tech.icon}</div>
+                    <p className="text-sm font-medium text-gray-200">{tech.name}</p>
+                  </div>
                 ))}
               </motion.div>
             </div>

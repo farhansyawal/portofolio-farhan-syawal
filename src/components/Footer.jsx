@@ -41,8 +41,8 @@ const Footer = () => {
           <div className="flex space-x-4">
             <a href="#" className="hover:text-white"><Facebook size={20} /></a>
             <a href="#" className="hover:text-white"><Twitter size={20} /></a>
-            <a href="#" className="hover:text-white"><Instagram size={20} /></a>
-            <a href="mailto:support@bioskopku.id" className="hover:text-white"><Mail size={20} /></a>
+            <a href="https://www.instagram.com/farhansawal22_" className="hover:text-white"><Instagram size={20} /></a>
+            <a href="mailto:farhansawal20@gmail.com" className="hover:text-white"><Mail size={20} /></a>
           </div>
         </div>
       </div>

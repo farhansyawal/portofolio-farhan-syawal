@@ -49,8 +49,13 @@ const LanyardAnimation = () => {
         {/* Foto Profil */}
         <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-teal-500 shadow-md">
           <img
-            src="/farhan.jpeg"
+            src="/farhan.webp"
             alt="Farhan"
+            width={96}
+            height={96}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
             className="w-full h-full object-cover"
           />
         </div>
@@ -68,8 +73,12 @@ const LanyardAnimation = () => {
         {/* QR Code */}
         <div className="flex flex-col items-center">
           <img
-            src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://yourportfolio.com"
+            src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://instagram.com/farhansawal22_"
             alt="QR Code"
+            width={80}
+            height={80}
+            loading="lazy"
+            decoding="async"
             className="rounded-lg shadow-md"
           />
           <p className="text-xs text-gray-500 mt-1">Scan untuk lihat profil</p>
