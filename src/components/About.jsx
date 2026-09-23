@@ -1,63 +1,53 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaCode, FaPalette, FaServer, FaLaptopCode } from "react-icons/fa";
-
-const TIERS = ["Dasar", "Berkembang", "Cakap", "Mahir", "Ahli"];
+import { FaCode, FaPalette, FaServer, FaLaptopCode, FaMobileAlt } from "react-icons/fa";
 
 const skills = [
   {
-    name: "HTML/CSS",
-    tier: 4,
-    icon: <FaCode />,
-    description: "Fondasi utama untuk membangun tampilan halaman web.",
-  },
-  {
-    name: "JavaScript",
-    tier: 2,
+    name: "React & Tailwind CSS",
     icon: <FaLaptopCode />,
-    description:
-      "Digunakan untuk membuat website menjadi interaktif dan dinamis.",
-  },
-  {
-    name: "React & Tailwind",
-    tier: 2,
-    icon: <FaLaptopCode />,
-    description:
-      "Membangun antarmuka modern dengan komponen dan styling cepat.",
+    description: "Membangun antarmuka web modern yang responsif, dinamis, dan interaktif.",
   },
   {
     name: "PHP & Laravel",
-    tier: 4,
     icon: <FaServer />,
-    description: "Untuk pengembangan backend dan RESTful API modern.",
+    description: "Pengembangan backend, arsitektur MVC, integrasi database, dan pembuatan RESTful API.",
   },
   {
-    name: "UI/UX Design",
-    tier: 4,
+    name: "Flutter & Firebase",
+    icon: <FaMobileAlt />,
+    description: "Pengembangan aplikasi mobile lintas platform (Android/iOS) dengan backend real-time.",
+  },
+  {
+    name: "Database & System Design",
+    icon: <FaCode />,
+    description: "Manajemen relasi data menggunakan MySQL dan implementasi sistem informasi.",
+  },
+  {
+    name: "UI/UX & Analysis",
     icon: <FaPalette />,
-    description: "Merancang tampilan dan pengalaman pengguna yang menarik.",
+    description: "Merancang pengalaman pengguna yang intuitif dan merancang alur sistem terstruktur.",
   },
 ];
 
 const experience = [
   {
-    title: "Freelance Web Developer",
+    title: "Freelance Web & Mobile Developer",
     period: "2023 - Sekarang",
-    desc: "Membangun aplikasi web responsif dengan HTML, Bootstrap, dan PHP.",
+    desc: "Membangun aplikasi web responsif dan aplikasi mobile (Android) yang terintegrasi dengan database cloud.",
   },
   {
-    title: "Backend Developer Intern - Kementrian Lingkungan Hidup",
+    title: "Backend Developer Intern - Kementerian Lingkungan Hidup (KLH/BPLH)",
     period: "Oktober 2025 - Januari 2026",
-    desc: "Membangun aplikasi web layanan pegawai dengan Laravel, Tailwind CSS, dan.",
+    desc: "Ditempatkan di Biro Sumber Daya Manusia dan Organisasi (BSDMO). Bertanggung jawab memigrasikan layanan internal dari Google Sites ke aplikasi kustom berbasis Laravel.",
   },
-  
 ];
 
 const education = [
   {
     title: "Universitas Bina Sarana Informatika",
     degree: "S1 Teknologi Informasi",
-    period: "2022 - Sekarang",
+    period: "2022 - 2026",
     desc: "Fokus pada pengembangan aplikasi web dan teknologi interaktif.",
   },
 ];
@@ -79,11 +69,8 @@ const About = () => {
           >
             About Me
           </motion.h2>
-          <p className="text-gray-400 text-base mt-3 max-w-xl mx-auto">
-            Fresh Graduate Universitas Bina Sarana Informatika, berpengalaman sebagai Backend Developer Intern di Kementerian Lingkungan
-Hidup / Badan Pengendalian Lingkungan Hidup. Berfokus pada pengembangan aplikasi berbasis web yang responsif dan terintegrasi
-menggunakan Laravel dan Tailwind CSS. Memiliki kemampuan analisis logika backend yang solid serta terbiasa membangun sistem
-digital yang efisien dan nyaman digunakan. Siap berkontribusi dalam mendukung kebutuhan pengembangan web perusahaan.
+          <p className="text-gray-400 text-base mt-3 max-w-2xl mx-auto leading-relaxed">
+            Fresh Graduate S1 Teknologi Informasi dari Universitas Bina Sarana Informatika yang memiliki minat kuat dan pengalaman praktis dalam pengembangan perangkat lunak. Berpengalaman sebagai Backend Developer Intern di Kementerian Lingkungan Hidup (KLH/BPLH) dalam memigrasikan layanan internal ke sistem berbasis Laravel. Terbiasa membangun aplikasi web dan mobile menggunakan Laravel, React, Tailwind CSS, dan Flutter. Memiliki kemampuan analisis logika yang solid serta fokus pada perancangan sistem digital yang efisien, fungsional, dan nyaman digunakan.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mt-6">
             {[
@@ -95,7 +82,7 @@ digital yang efisien dan nyaman digunakan. Siap berkontribusi dalam mendukung ke
             ].map((badge, idx) => (
               <span
                 key={idx}
-                className="px-4 py-1 text-sm text-teal-300 border border-teal-500 rounded-full bg-white/5 backdrop-blur hover:bg-teal-600/20 transition"
+                className="px-4 py-1.5 text-sm font-medium text-teal-300 border border-teal-500/50 rounded-full bg-white/5 backdrop-blur hover:bg-teal-500 hover:text-white transition-all cursor-default"
               >
                 #{badge}
               </span>
@@ -108,7 +95,7 @@ digital yang efisien dan nyaman digunakan. Siap berkontribusi dalam mendukung ke
           {/* Education & Experience */}
           <div className="space-y-12">
             <div>
-              <h3 className="text-xl text-teal-400 font-semibold mb-4">
+              <h3 className="text-2xl text-teal-400 font-bold mb-6 flex items-center gap-2">
                 Education
               </h3>
               {education.map((item, idx) => (
@@ -118,18 +105,22 @@ digital yang efisien dan nyaman digunakan. Siap berkontribusi dalam mendukung ke
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="border-l-4 border-teal-500 pl-6 mb-6 relative"
+                  className="border-l-4 border-teal-500 pl-6 mb-6 relative group"
                 >
-                  <div className="absolute -left-2 top-1 w-3 h-3 bg-teal-400 rounded-full" />
-                  <h4 className="text-lg font-bold">{item.title}</h4>
-                  <span className="text-sm text-gray-400">{item.period}</span>
-                  <p className="text-sm text-gray-300 mt-1">{item.desc}</p>
+                  <div className="absolute -left-[11px] top-1.5 w-4 h-4 bg-[#0f172a] border-4 border-teal-500 rounded-full group-hover:bg-teal-400 transition-colors" />
+                  <h4 className="text-xl font-bold text-white">{item.title}</h4>
+                  <div className="flex flex-wrap items-center gap-2 mt-1">
+                    <span className="text-sm font-medium text-teal-300">{item.degree}</span>
+                    <span className="text-gray-500 text-xs">•</span>
+                    <span className="text-sm text-gray-400">{item.period}</span>
+                  </div>
+                  <p className="text-sm text-gray-300 mt-2 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
 
             <div>
-              <h3 className="text-xl text-teal-400 font-semibold mb-4">
+              <h3 className="text-2xl text-teal-400 font-bold mb-6 flex items-center gap-2">
                 Experience
               </h3>
               {experience.map((item, idx) => (
@@ -139,75 +130,45 @@ digital yang efisien dan nyaman digunakan. Siap berkontribusi dalam mendukung ke
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="border-l-4 border-teal-500 pl-6 mb-6 relative"
+                  className="border-l-4 border-teal-500 pl-6 mb-6 relative group"
                 >
-                  <div className="absolute -left-2 top-1 w-3 h-3 bg-teal-400 rounded-full" />
-                  <h4 className="text-lg font-bold">{item.title}</h4>
-                  <span className="text-sm text-gray-400">{item.period}</span>
-                  <p className="text-sm text-gray-300 mt-1">{item.desc}</p>
+                  <div className="absolute -left-[11px] top-1.5 w-4 h-4 bg-[#0f172a] border-4 border-teal-500 rounded-full group-hover:bg-teal-400 transition-colors" />
+                  <h4 className="text-xl font-bold text-white leading-tight">{item.title}</h4>
+                  <span className="inline-block text-sm text-teal-300 mt-1 font-medium">{item.period}</span>
+                  <p className="text-sm text-gray-300 mt-2 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
           </div>
 
-          {/* Skills & Tools */}
-          <div className="space-y-12">
-            {/* Skills */}
-            <div>
-              <h3 className="text-xl text-teal-400 font-semibold mb-4">
-                Skills
-              </h3>
-              <div className="space-y-4">
-                {skills.map((skill, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false }}
-                    transition={{ delay: idx * 0.1 }}
-                    className="group p-4 bg-white/5 rounded-lg shadow-lg hover:bg-white/10 transition-all duration-300"
-                  >
-                    <div className="flex items-center justify-between gap-4">
-                      <div className="flex items-center gap-3 min-w-0">
-                        <div className="text-teal-400 text-xl shrink-0">
-                          {skill.icon}
-                        </div>
-                        <div className="min-w-0">
-                          <p className="text-white font-medium">{skill.name}</p>
-                          <p className="text-gray-400 text-xs truncate">
-                            {skill.description}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="shrink-0 text-right">
-                        <span className="text-[11px] font-semibold text-teal-300 uppercase tracking-wide">
-                          {TIERS[skill.tier - 1]}
-                        </span>
-                        <div className="flex items-center gap-1.5 mt-1.5">
-                          {TIERS.map((_, dotIdx) => (
-                            <motion.span
-                              key={dotIdx}
-                              initial={{ scale: 0 }}
-                              whileInView={{ scale: 1 }}
-                              viewport={{ once: false }}
-                              transition={{
-                                delay: idx * 0.1 + dotIdx * 0.05,
-                                duration: 0.25,
-                              }}
-                              className={`w-2 h-2 rounded-full ${
-                                dotIdx < skill.tier
-                                  ? "bg-teal-400"
-                                  : "bg-gray-700"
-                              }`}
-                            />
-                          ))}
-                        </div>
-                      </div>
+          {/* Skills & Tools (Tanpa Indikator Level) */}
+          <div>
+            <h3 className="text-2xl text-teal-400 font-bold mb-6">
+              Skills & Expertise
+            </h3>
+            <div className="space-y-4">
+              {skills.map((skill, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="group p-5 bg-white/5 border border-white/5 rounded-xl shadow-lg hover:bg-white/10 hover:border-teal-500/40 transition-all duration-300"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-teal-500/10 text-teal-400 text-2xl shrink-0 group-hover:scale-110 group-hover:bg-teal-500/20 transition-all">
+                      {skill.icon}
                     </div>
-                  </motion.div>
-                ))}
-              </div>
+                    <div>
+                      <p className="text-white font-semibold text-lg">{skill.name}</p>
+                      <p className="text-gray-400 text-sm mt-0.5 leading-relaxed">
+                        {skill.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
@@ -218,14 +179,13 @@ digital yang efisien dan nyaman digunakan. Siap berkontribusi dalam mendukung ke
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.6 }}
-          className="relative max-w-4xl mx-auto bg-white/5 border border-white/10 backdrop-blur-md px-8 py-6 rounded-xl shadow-md text-center"
+          className="relative max-w-4xl mx-auto bg-white/5 border border-white/10 backdrop-blur-md px-8 py-6 rounded-xl shadow-md text-center mt-12"
         >
           <p className="text-lg italic text-gray-300">
-            "Kreativitas adalah ketika teknologi dan desain bersatu untuk
-            menyelesaikan masalah manusia."
+            "Kreativitas adalah ketika teknologi dan desain bersatu untuk menyelesaikan masalah manusia."
           </p>
-          <span className="block text-teal-400 mt-4 font-medium">
-            — Farhan Syawaludin
+          <span className="block text-teal-400 mt-4 font-medium tracking-wide">
+            — Farhan Syawal
           </span>
         </motion.div>
       </div>

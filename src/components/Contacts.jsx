@@ -11,7 +11,7 @@ const contactInfo = [
   {
     icon: <Phone className="w-6 h-6 text-teal-400" />,
     title: "Telepon",
-    value: "+62 819 1064 7625",
+    value: "+62 858 9131 6971",
   },
   {
     icon: <MapPin className="w-6 h-6 text-teal-400" />,
