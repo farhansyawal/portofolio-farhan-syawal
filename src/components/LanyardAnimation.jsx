@@ -49,7 +49,7 @@ const LanyardAnimation = () => {
         {/* Foto Profil */}
         <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-teal-500 shadow-md">
           <img
-            src="/farhan.webp"
+            src="/farhan.jpeg"
             alt="Farhan"
             width={96}
             height={96}
