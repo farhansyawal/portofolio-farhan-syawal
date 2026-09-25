@@ -34,12 +34,12 @@ Mahasiswa **Manajemen** sekaligus **Full-stack Web & Mobile Developer**. Saya me
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=farhansyawal&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" width="48%" alt="Statistik GitHub" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=farhansyawal&layout=compact&theme=tokyonight&hide_border=true" width="48%" alt="Bahasa Terbanyak Ditulis" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=farhansyawal&layout=compact&theme=tokyonight&hide_border=true" width="48%" alt="Bahasa Terbanyak Ditulis" />
 </div>
 
 ---
 
 ### 📬 Kontak
 
-- **LinkedIn:** [Farhan Syawal]([https://linkedin.com](https://www.linkedin.com/in/farhan-syawaludin-092134260/))
+- **LinkedIn:** [Farhan Syawal](https://www.linkedin.com/in/farhan-syawaludin-092134260/)
 - **Email:** farhansawal20@gmail.com
