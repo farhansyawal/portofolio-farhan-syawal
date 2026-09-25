@@ -24,7 +24,7 @@ Mahasiswa **Manajemen** sekaligus **Full-stack Web & Mobile Developer**. Saya me
 
 | Proyek | Deskripsi | Tech Stack |
 | :--- | :--- | :--- |
-| **[Web Biro SDMO KLH/BPLH](https://github.com/farhansyawal/web-bsdmo)** | Portal layanan internal dan migrasi sistem kepegawaian terpusat. | Laravel, Tailwind CSS, MySQL |
+| **[Web Biro SDMO KLH/BPLH](https://github.com/farhansyawal/birosdmo)** | Portal layanan internal dan migrasi sistem kepegawaian terpusat. | Laravel, Tailwind CSS, MySQL |
 | **Toko Kopi Koka** | Aplikasi POS mobile, pemesanan, dan manajemen inventaris toko. | Flutter, Firebase, Sheets API |
 | **Sistem Informasi RS (SIMRS)** | Platform manajemen rumah sakit dengan otorisasi hak akses terstruktur. | Laravel, Spatie, Tailwind CSS |
 | **E-Laundry ERP** | Dashboard back-office untuk pencatatan transaksi dan operasional laundry. | Laravel, Filament ERP |
@@ -42,5 +42,5 @@ Mahasiswa **Manajemen** sekaligus **Full-stack Web & Mobile Developer**. Saya me
 
 ### 📬 Kontak
 
-- **LinkedIn:** [Farhan Syawal](https://linkedin.com) *(isi link LinkedIn kamu)*
-- **Email:** farhansyawal@example.com *(isi email kamu)*
+- **LinkedIn:** [Farhan Syawal]([https://linkedin.com](https://www.linkedin.com/in/farhan-syawaludin-092134260/))
+- **Email:** farhansawal20@gmail.com
